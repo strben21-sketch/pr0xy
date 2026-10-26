@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10121a">
+  <title>Nova Proxy</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="browser">
+    <div class="tabbar">
+      <div id="tabs" class="tabs" aria-label="Browser tabs"></div>
+      <button id="new-tab" class="icon-button" title="New tab" aria-label="New tab">+</button>
+      <span class="window-dots"><i></i><i></i><i></i></span>
+    </div>
+
+    <div class="toolbar">
+      <button id="back" class="icon-button" title="Back" aria-label="Back">‹</button>
+      <button id="forward" class="icon-button" title="Forward" aria-label="Forward">›</button>
+      <button id="reload" class="icon-button" title="Reload" aria-label="Reload">↻</button>
+      <button id="home" class="icon-button" title="Home" aria-label="Home">⌂</button>
+
+      <form id="address-form" class="address-form">
+        <span class="lock">◈</span>
+        <input id="address" type="text" autocomplete="off"
+          spellcheck="false" placeholder="Search or enter a website address">
+        <button class="go-button" type="submit">Go ↗</button>
+      </form>
+
+      <button id="bookmark" class="icon-button" title="Bookmark this page"
+        aria-label="Bookmark this page">☆</button>
+    </div>
+
+    <nav class="bookmarks" id="bookmarks" aria-label="Bookmarks">
+      <button data-url="https://example.com">Example</button>
+      <button data-url="https://developer.mozilla.org">MDN</button>
+      <button data-url="https://www.wikipedia.org">Wikipedia</button>
+    </nav>
+  </header>
+
+  <main id="workspace">
+    <section id="start-page" class="start-page">
+      <div class="brand-mark">N</div>
+      <p class="eyebrow">YOUR WEB, YOUR WAY</p>
+      <h1>Nova<span> Proxy</span></h1>
+      <p class="subtitle">A simpler way to explore the web.</p>
+
+      <form id="search-form" class="search-form">
+        <span>⌕</span>
+        <input id="search" placeholder="Search or enter a URL..."
+          autocomplete="off" aria-label="Search or enter a URL">
+        <button type="submit">Explore</button>
+      </form>
+
+      <div class="quick-links">
+        <button data-url="https://example.com"><b>E</b><span>Example</span></button>
+        <button data-url="https://developer.mozilla.org"><b>M</b><span>MDN Docs</span></button>
+        <button data-url="https://www.wikipedia.org"><b>W</b><span>Wikipedia</span></button>
+        <button data-url="https://github.com"><b>G</b><span>GitHub</span></button>
+      </div>
+
+      <p class="notice">
+        Experimental proxy. Some websites won't work, and pages may load
+        third-party resources directly.
+      </p>
+    </section>
+
+    <section id="page-view" class="page-view" hidden>
+      <div class="page-loading" id="loading">Loading page…</div>
+      <iframe id="page-frame" title="Proxied website"
+        referrerpolicy="no-referrer"></iframe>
+    </section>
+  </main>
+
+  <footer class="statusbar">
+    <span><i class="status-dot"></i> Nova is ready</span>
+    <span>Experimental web proxy</span>
+  </footer>
+</body>
+</html>
